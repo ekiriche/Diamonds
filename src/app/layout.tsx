@@ -18,3 +18,11 @@ export default function RootLayout({
     </html>
   )
 }
+
+export const metadata = {
+  title: {
+    default: 'Gaming Platform',
+    template: '%s | Gaming Platform'
+  },
+  description: 'Your gaming platform description'
+}

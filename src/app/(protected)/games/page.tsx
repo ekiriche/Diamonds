@@ -5,7 +5,7 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import GameCard from '@/components/GameCard';
 import Pagination from '@/components/Pagination';
-import { Game, GamesResponse } from '@/types';
+import { Game, GamesResponse } from '@/app/types';
 
 export default function GamesPage() {
   const { data: session, status } = useSession();
