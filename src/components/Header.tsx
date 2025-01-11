@@ -3,9 +3,21 @@
 import { useSession, signOut } from 'next-auth/react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+
+const pathsWithoutHeader = ['/', '/login'];
 
 export default function Header() {
   const { data: session } = useSession();
+  const pathname = usePathname();
+
+  const handleSignOut = async () => {
+    await signOut({ callbackUrl: '/' });
+  };
+
+  if (pathsWithoutHeader.includes(pathname)) {
+    return null;
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full bg-gray-900 text-white shadow-md">
@@ -43,7 +55,7 @@ export default function Header() {
                   <span className="hidden sm:inline">{session.user.name}</span>
                 </div>
                 <button
-                  onClick={() => signOut()}
+                  onClick={handleSignOut}
                   className="rounded bg-red-500 px-4 py-2 hover:bg-red-600"
                 >
                   Logout
