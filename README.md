@@ -32,8 +32,8 @@ Before running this project, you need to have:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/gaming-platform.git
-cd gaming-platform
+git clone https://github.com/ekiriche/Diamonds.git
+cd Diamonds
 ```
 2. Install dependencies:
 ```bash
