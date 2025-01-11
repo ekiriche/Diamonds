@@ -25,7 +25,7 @@ export default function PaymentPage() {
     
     const storedDiamonds = localStorage.getItem('diamonds');
     setDiamonds(storedDiamonds ? parseInt(storedDiamonds) : 0);
-  }, [session, router]);
+  }, [session, router, status]);
 
   const handlePurchase = (amount: number) => {
     const newTotal = diamonds + amount;

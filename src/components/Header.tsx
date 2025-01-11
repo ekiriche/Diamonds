@@ -12,13 +12,18 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <nav className="flex space-x-4">
-            <Link href="/games" className="hover:text-gray-300">
-              Games
-            </Link>
             {session && (
+              <>
+              <Link href="/games" className="hover:text-gray-300">
+                Games
+              </Link>
               <Link href="/payment" className="hover:text-gray-300">
                 Store
               </Link>
+              <Link href="/leaderboard" className="hover:text-gray-300">
+                Leaderboard
+              </Link>
+              </>
             )}
           </nav>
           
@@ -32,7 +37,7 @@ export default function Header() {
                       alt="User avatar"
                       width={32}
                       height={32}
-                      className="rounded-full"
+                      className="rounded-full hidden sm:inline"
                     />
                   )}
                   <span className="hidden sm:inline">{session.user.name}</span>
