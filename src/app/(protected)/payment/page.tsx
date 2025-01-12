@@ -23,14 +23,14 @@ export default function PaymentPage() {
       return;
     }
     
-    const storedDiamonds = localStorage.getItem('diamonds');
+    const storedDiamonds = localStorage.getItem(`diamonds-${session?.user?.email}`);
     setDiamonds(storedDiamonds ? parseInt(storedDiamonds) : 0);
   }, [session, router, status]);
 
   const handlePurchase = (amount: number) => {
     const newTotal = diamonds + amount;
     setDiamonds(newTotal);
-    localStorage.setItem('diamonds', newTotal.toString());
+    localStorage.setItem(`diamonds-${session?.user?.email}`, newTotal.toString());
     
     // Show success message
     setShowSuccess(true);
