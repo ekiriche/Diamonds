@@ -24,7 +24,7 @@ A web application that allows users to explore games, manage virtual currency, a
 
 Before running this project, you need to have:
 - Node.js (v18 or higher)
-- yarn or npm
+- npm
 - Google OAuth credentials
 - RAWG API key
 
